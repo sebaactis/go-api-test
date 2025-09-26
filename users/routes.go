@@ -9,4 +9,6 @@ func RegisterRoutes(r *mux.Router, h *Handler) {
 	s.HandleFunc("", h.Create).Methods("POST")
 	s.HandleFunc("", h.List).Methods("GET")
 	s.HandleFunc("/{id:[0-9]+}", h.GetByID).Methods("GET")
+	s.HandleFunc("/{id:[0-9]+}", h.UpdateByID).Methods("PUT")
+	s.HandleFunc("/{id:[0-9]+}", h.Delete).Methods("DELETE")
 }
